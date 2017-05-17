@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<input type="checkbox" name="">全选<br>
+	<div>
+	<input type="checkbox" name="">1111<br>
+	<input type="checkbox" name="">2222<br>
+	<input type="checkbox" name="">33333<br>
+	</div>
+</body>
+<script type="text/javascript" src="../jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(function(){
+  		console.log(1);
+  $("div input").click(function(){
+  	if($("div input").prop("checked",true)){
+      $("div input").prop("checked",$("input").eq(0).prop("checked"));
+  	}
+  	// else{
+  	// }
+  })
+})
+
+
+</script>
+</html>

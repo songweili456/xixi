@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            width:780px;
+            height:520px;
+            background:red;
+            margin:50px auto;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="wrap"></div>
+</body>
+<script>
+    $(function(){
+        var imgLoadNum=0;
+        var imgIndex=0;//imgIndex代表的是将第几张图片进行显示
+        for(var i=0;i<72;i++){
+            var img=$("<img src='img/golf"+i+".jpg' />");
+            img.hide();
+            img.appendTo($(".wrap"));
+            img.on("load",function(){
+                imgLoadNum++;
+                if(imgLoadNum==72){
+                    imgLoad();
+                }
+            })
+        }
+        function imgLoad(){//加载完以后调用该方法
+            $("img").eq(imgIndex).show();//将默认的指定图片进行显示
+            $(".wrap").mousedown(function(e){
+                var startX= e.clientX;
+                $(document).mousemove(function(e){
+                    var endX= e.clientX;
+                    if(parseInt((endX-startX)/20)!=0){//endX==980
+                        $("img").eq(imgIndex).hide();//将显示的图片隐藏起来
+                        imgIndex+=parseInt((endX-startX)/20);//-1
+                        startX=endX;
+                        if(imgIndex<0)
+                            imgIndex=71;
+                        if(imgIndex>71)
+                            imgIndex=0;
+                        $("img").eq(imgIndex).show();
+                    }
+                });
+                $(document).mouseup(function(){
+                    $(this).off("mousemove");
+                });
+                return false;
+            });
+        }
+    })
+
+</script>
+</html>

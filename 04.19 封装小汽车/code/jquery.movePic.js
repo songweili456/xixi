@@ -1,0 +1,20 @@
+/**
+ * Created by tydte on 2017/4/19.
+ */
+(function($){
+    //插件的代码
+})(jQuery);
+(function($){
+    $.fn.move=function(obj){
+        //this是由JQ对象来调的
+        this.delay(obj.delayTime);
+        this.animate({
+            left:obj.leftNum
+        },obj.moveTime,obj.moveType,function(){
+            $("img").first().appendTo($(this));
+            this.style.left="0px";
+            //console.log(this);
+            $(this).move(obj);
+        });
+    }
+})(jQuery);

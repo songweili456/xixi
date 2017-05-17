@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background:#ccc;
+            color:yellow;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+</head>
+<body>
+<div>
+插件JQ
+</div>
+</body>
+<script src="jquery.color.js"></script>
+<script>
+//    var obj=$('div');
+//    function color(jqObj,color){//将obj的字体颜色变为指定的颜色
+//        if(color==undefined)
+//            return jqObj.css("color");
+//        jqObj.css("color",color);
+//    }
+//    color(obj,"green");
+//    //div的字体颜色已经变成了绿色了
+//    console.log(color(obj));//green
+
+//正式来封装一下插件
+
+//新建一个JS
+//JS命名建议是以jquery.开头
+//console.log($.fn== $.prototype);
+//    var A=function(){
+//
+//    }
+//    A.prototype.getColor=function(){
+//        return 11;
+//    }
+//A.prototype.name="名称";
+//    var obj=new A();
+//    console.log(obj.getColor());
+//console.log(obj.name);
+
+
+$(function(){
+    //$("div").getColor("blue");
+//    console.log($);
+//    $.getColor("blue");
+    console.log($.getColor());
+    //console.log($("div").getColor("blue"));
+//    var myDiv=document.querySelector("div");
+//    $(mydiv);//将DOM转为JQ对象
+//    $("div");//JQ对象
+   // $($("div")).css("color","blue");
+//    $("div").getColor("red").css("width",300);
+//    console.log($("div").getColor());
+});
+
+
+
+//    //.CSS
+//    $("div").getColor("red");
+//    var str=$("div").getColor();
+//    function color(str){
+//
+//    }
+
+</script>
+</html>

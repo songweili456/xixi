@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            width:259px;
+            height:400px;
+            margin:100px auto;
+            position:relative;
+            overflow:hidden;
+        }
+        .wrap div{
+            width:3000px;
+            font-size:0;
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="jquery.movePic.js"></script>
+<script>
+    $(function(){
+        for(var i=1;i<6;i++){
+            $("<img src='img/"+i+".jpg'>").appendTo($(".wrap div"));
+        }
+//        function move(){
+//            $(".wrap div").delay(1000);
+//            $(".wrap div").animate({
+//                left:-259
+//            },2000,"linear",function(){
+//                $("img").first().appendTo($(this));
+//                this.style.left="0px";
+//                move();
+//            });
+//        }
+//        move();
+        var obj={
+            delayTime:2000,//等待的时间
+            leftNum:-259,//向左移动的距离
+            moveType:"linear",//移动的类型
+            moveTime:2000//动画所需要的时间
+        }
+        $(".wrap div").move(obj);
+    })
+</script>
+</html>
